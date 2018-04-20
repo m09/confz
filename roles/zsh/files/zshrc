@@ -1,0 +1,9 @@
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="gallois"
+ZSH_CUSTOM="$HOME/.zsh-custom"
+plugins=(git history mvn rsync tmux virtualenvwrapper jump)
+source $ZSH/oh-my-zsh.sh
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+unsetopt HIST_SAVE_BY_COPY

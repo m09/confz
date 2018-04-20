@@ -1,0 +1,15 @@
+---
+- name: Install emacs
+  apt:
+    name: emacs
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Copy emacs folder
+  synchronize:
+    src: conf/
+    dest: "{{ ansible_user_dir }}/.emacs.d/"
+    delete: yes
+    recursive: true
+

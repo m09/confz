@@ -1,0 +1,30 @@
+---
+- name: Install zsh
+  apt:
+    name: zsh
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Install oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+- name: Copy configuration
+  synchronize:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.{{ item }}"
+    delete: yes
+    recursive: true
+  with_items:
+    - zsh-custom/
+    - zshrc
+    - zshenv
+
+- name: Change default shell to zsh
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+  become: yes
+  become_method: sudo

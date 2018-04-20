@@ -1,0 +1,12 @@
+---
+- name: Install git
+  apt:
+    name: git
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Copy git config
+  copy:
+    src: config
+    dest: "{{ ansible_user_dir }}/.gitconfig"

@@ -1,0 +1,10 @@
+export ZSH_CUSTOM="$HOME/.zsh-custom"
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="gallois"
+export PATH="$HOME/.local/bin:$PATH"
+
+files="$(find "$ZSH_CUSTOM/env/" -type f -name '*.zsh-env' -print0 | sort -z)"
+IFS=$'\0' read -r -A files <<< "$files"
+for f in "${files[@]}"; do
+    if [[ -f "$f" ]]; then source "$f"; fi
+done

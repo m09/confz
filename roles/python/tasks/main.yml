@@ -1,0 +1,48 @@
+---
+- name: Copy configuration
+  copy:
+    src: pythonrc
+    dest: "{{ ansible_user_dir }}/.pythonrc"
+
+- name: Install pip3
+  apt:
+    name: python3-pip
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Install virtualenvwrapper
+  pip:
+    name: virtualenvwrapper
+    executable: pip3
+  become: yes
+  become_method: sudo
+
+- name: Check if Anaconda is installed
+  stat:
+    path: '{{ anaconda_source_script_path }}'
+  register: anaconda_source_script
+
+- name: Install Anaconda
+  when: not anaconda_source_script.stat.exists
+  block:
+    - name: Download Anaconda installer
+      when: not anaconda_source_script.stat.exists
+      get_url:
+        url: '{{ anaconda_installer_url}}'
+        dest: '{{ anaconda_installer_dest }}'
+        timeout: '{{ anaconda_download_timeout_sec }}'
+        checksum: '{{ anaconda_installer_checksum }}'
+        mode: '0755'
+
+    - name: Install Anaconda
+      command: '{{ anaconda_installer_dest }} -b -p {{ anaconda_home_dir }}'
+      args:
+        creates: '{{ anaconda_home_dir }}'
+
+    - name: Remove installer
+      file:
+        path: '{{ anaconda_installer_dest }}'
+        state: 'absent'  
+
+

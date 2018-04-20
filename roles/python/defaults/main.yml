@@ -1,0 +1,9 @@
+---
+
+anaconda_installer_url: 'https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh'
+anaconda_installer_dest: '/tmp/Anaconda3-5.1.0-Linux-x86_64.sh'
+anaconda_installer_checksum: 'md5:966406059cf7ed89cc82eb475ba506e5'
+anaconda_download_timeout_sec: 1800
+
+# Anaconda home directory.
+anaconda_home_dir: '{{ ansible_user_dir }}/opt/anaconda'

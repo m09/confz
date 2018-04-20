@@ -1,0 +1,1 @@
+anaconda_source_script_path: '{{ anaconda_home_dir }}/etc/profile.d/conda.sh'

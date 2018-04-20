@@ -1,0 +1,3 @@
+alias cuda0='CUDA_VISIBLE_DEVICES=0'
+alias cuda1='CUDA_VISIBLE_DEVICES=1'
+

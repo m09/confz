@@ -1,0 +1,21 @@
+---
+- name: Install tmux
+  apt:
+    name: tmux
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Copy tmux folder
+  synchronize:
+    src: conf/
+    dest: "{{ ansible_user_dir }}/.tmux/"
+    delete: yes
+    recursive: true
+
+- name: Copy configuration
+  copy:
+    src: tmux.conf
+    dest: "{{ ansible_user_dir }}/.tmux.conf"
+    force: yes
+

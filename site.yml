@@ -1,0 +1,13 @@
+---
+- name: Make sure the system is updated and has all the important stuff.
+  hosts: all
+  roles:
+    - git
+    - curl
+    - zsh
+    - python
+    - ssh
+    - github-key
+    - emacs
+    - tmux
+    - update
