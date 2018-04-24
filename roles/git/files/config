@@ -11,10 +11,13 @@
 [pull]
         rebase = true
 [alias]
-	co = checkout
-	ai = add -i
-	st = status -sb
-	ci = commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        co = checkout
+        ai = add -i
+        st = status -sb
+        ci = commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        ff = flow feature
+        fh = flow hotfix
+        fr = flow release
