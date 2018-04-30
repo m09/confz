@@ -7,6 +7,6 @@
   become_method: sudo
 
 - name: Copy config
-  file:
+  copy:
     src: config
-    dest: ~/.curlrc
+    dest: "{{ ansible_user_dir }}/.curlrc"
