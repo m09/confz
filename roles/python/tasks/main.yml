@@ -4,19 +4,15 @@
     src: pythonrc
     dest: "{{ ansible_user_dir }}/.pythonrc"
 
-- name: Install pip3
-  apt:
-    name: python3-pip
-    state: present
-  become: yes
-  become_method: sudo
+- name: Copy PyPi configuration
+  copy:
+    src: pypirc
+    dest: "{{ ansible_user_dir }}/.pypirc"
 
-- name: Install virtualenvwrapper
-  pip:
-    name: virtualenvwrapper
-    executable: pip3
-  become: yes
-  become_method: sudo
+- name: Ensure PyPi configuration has proper permissions
+  file:
+    path:  "{{ ansible_user_dir }}/.pypirc"
+    mode: 0400
 
 - name: Check if Anaconda is installed
   stat:
@@ -45,4 +41,8 @@
         path: '{{ anaconda_installer_dest }}'
         state: 'absent'  
 
+- name: Install virtualenvwrapper
+  pip:
+    name: virtualenvwrapper
+    executable: '{{ anaconda_home_dir }}/bin/pip'
 
