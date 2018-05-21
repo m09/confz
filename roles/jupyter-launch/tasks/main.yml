@@ -1,0 +1,5 @@
+---
+- name: Launch jupyter notebook server
+  command: zsh launch-server.zsh
+  args:
+    chdir: "{{ ansible_user_dir }}/jupyter"

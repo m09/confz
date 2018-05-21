@@ -15,7 +15,6 @@
   synchronize:
     src: "{{ item }}"
     dest: "{{ ansible_user_dir }}/.{{ item }}"
-    delete: yes
     recursive: true
   with_items:
     - zsh-custom/

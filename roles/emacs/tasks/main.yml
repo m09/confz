@@ -13,3 +13,9 @@
     delete: yes
     recursive: true
 
+- name: Add zsh configuration
+  synchronize:
+    src: "zsh-custom/"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/"
+    recursive: true
+

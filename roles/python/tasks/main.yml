@@ -46,3 +46,10 @@
     name: virtualenvwrapper
     executable: '{{ anaconda_home_dir }}/bin/pip'
 
+
+- name: Add zsh configuration
+  synchronize:
+    src: "zsh-custom/"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/"
+    recursive: true
+
