@@ -1,4 +1,12 @@
 ---
+
+- name: Install deps
+  apt:
+    name: bzip2
+    state: present
+  become: yes
+  become_method: sudo
+    
 - name: Copy configuration
   copy:
     src: pythonrc
