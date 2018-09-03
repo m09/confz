@@ -1,0 +1,13 @@
+---
+- name: Install latex
+  apt:
+    name: texlive-full
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Copy configuration
+  synchronize:
+    src: "latexmkrc"
+    dest: "{{ ansible_user_dir }}/.latexmkrc"
+
