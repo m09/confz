@@ -1,2 +1,0 @@
-export PATH="$HOME/opt/anaconda/bin:$PATH"
-source "$HOME/opt/anaconda/etc/profile.d/conda.sh"

@@ -1,4 +1,0 @@
-export VIRTUALENVWRAPPER_PYTHON="$HOME/opt/anaconda/bin/python"
-export VIRTUALENV_PYTHON="$HOME/opt/anaconda/bin/python"
-export WORKON_HOME=$HOME/.virtualenvs
-source "$HOME/opt/anaconda/bin/virtualenvwrapper.sh"

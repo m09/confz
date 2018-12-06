@@ -17,8 +17,8 @@ function speak() {
 }
 
 function convert-ext2ext() {
-    for f in *".$1"; do
-        convert "$f" "${f:.$1:$2}"
+    for f in *."$1"; do
+        convert "$f" "${f:.$1:.$2}"
     done
 }
 
@@ -34,10 +34,10 @@ function limit() {
 
 function aziz() {
     if [[ $# > 0 ]]; then
-        xrandr --output HDMI-2 --brightness "0.$1"
+        xrandr --output DP-1 --brightness "0.$1"
         xrandr --output eDP-1 --brightness "0.$1"
     else
-        xrandr --output HDMI-2 --brightness 1
+        xrandr --output DP-1 --brightness 1
         xrandr --output eDP-1 --brightness 1
     fi
 }

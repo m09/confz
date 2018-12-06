@@ -22,42 +22,41 @@
     path:  "{{ ansible_user_dir }}/.pypirc"
     mode: 0400
 
-- name: Check if Anaconda is installed
+- name: Check if Miniconda is installed
   stat:
-    path: '{{ anaconda_source_script_path }}'
-  register: anaconda_source_script
+    path: '{{ miniconda_source_script_path }}'
+  register: miniconda_source_script
 
-- name: Install Anaconda
-  when: not anaconda_source_script.stat.exists
+- name: Install Miniconda
+  when: not miniconda_source_script.stat.exists
   block:
-    - name: Download Anaconda installer
-      when: not anaconda_source_script.stat.exists
+    - name: Download Miniconda installer
+      when: not miniconda_source_script.stat.exists
       get_url:
-        url: '{{ anaconda_installer_url}}'
-        dest: '{{ anaconda_installer_dest }}'
-        timeout: '{{ anaconda_download_timeout_sec }}'
-        checksum: '{{ anaconda_installer_checksum }}'
+        url: '{{ miniconda_installer_url}}'
+        dest: '{{ miniconda_installer_dest }}'
+        timeout: '{{ miniconda_download_timeout_sec }}'
         mode: '0755'
 
-    - name: Install Anaconda
-      command: '{{ anaconda_installer_dest }} -b -p {{ anaconda_home_dir }}'
+    - name: Install Miniconda
+      command: '{{ miniconda_installer_dest }} -b -p {{ miniconda_home_dir }}'
       args:
-        creates: '{{ anaconda_home_dir }}'
+        creates: '{{ miniconda_home_dir }}'
 
     - name: Remove installer
       file:
-        path: '{{ anaconda_installer_dest }}'
-        state: 'absent'  
+        path: '{{ miniconda_installer_dest }}'
+        state: 'absent'
 
 - name: Install virtualenvwrapper
   pip:
     name: virtualenvwrapper
-    executable: '{{ anaconda_home_dir }}/bin/pip'
+    executable: '{{ miniconda_home_dir }}/bin/pip'
 
 
 - name: Add zsh configuration
-  synchronize:
-    src: "zsh-custom/"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/"
-    recursive: true
-
+  template:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/{{ item | basename }}"
+  with_fileglob:
+    - ./*.zsh-env
