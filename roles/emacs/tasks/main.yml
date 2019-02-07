@@ -2,7 +2,7 @@
 - name: Install emacs
   apt:
     name: emacs
-    state: present
+    state: latest
   become: yes
   become_method: sudo
 

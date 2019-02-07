@@ -2,7 +2,7 @@
 - name: Install tmux
   apt:
     name: tmux
-    state: present
+    state: latest
   become: yes
   become_method: sudo
 

@@ -3,7 +3,7 @@
 - name: Install deps
   apt:
     name: bzip2
-    state: present
+    state: latest
   become: yes
   become_method: sudo
     

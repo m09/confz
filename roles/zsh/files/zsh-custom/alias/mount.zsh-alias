@@ -1,6 +1,3 @@
-alias crydee-mount='sshfs crydee:. crydee'
-alias crydee-unmount='sudo umount crydee'
-alias external-crydee-mount='sshfs external-crydee:. crydee'
-alias external-crydee-unmount='sudo umount crydee'
-alias mount-nas-fmg='sudo mount 192.168.1.31:/data /media/fmg-nas'
+alias nas-mount='sudo mount /mnt/nas'
+alias nas-umount='sudo umount /mnt/nas'
 

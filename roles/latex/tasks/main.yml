@@ -1,8 +1,8 @@
 ---
 - name: Install latex
   apt:
-    name: texlive-full
-    state: present
+    name: ["texlive", "texlive-lang-english", "texlive-lang-french", "texlive-xetex"]
+    state: latest
   become: yes
   become_method: sudo
 

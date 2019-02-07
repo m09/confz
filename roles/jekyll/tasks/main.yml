@@ -1,0 +1,26 @@
+---
+
+- name: Install deps
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - ruby-full
+    - build-essential
+  become: yes
+  become_method: sudo
+
+- name: Add zsh configuration
+  copy:
+    src: "ruby.zsh-env"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/ruby.zsh-env"
+
+- gem:
+    name: "{{ item }}"
+    state: latest
+    user_install: no
+  with_items:
+    - bundler
+    - jekyll
+

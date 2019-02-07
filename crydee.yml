@@ -1,0 +1,15 @@
+---
+- name: Crydee setup.
+  hosts: crydee
+  roles:
+    - update
+    - git
+    - curl
+    - zsh
+    - jekyll
+    - python
+    - ssh
+    - github-key
+    - emacs
+    - tmux
+

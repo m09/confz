@@ -2,7 +2,7 @@
 - name: Install zsh
   apt:
     name: zsh
-    state: present
+    state: latest
   become: yes
   become_method: sudo
 

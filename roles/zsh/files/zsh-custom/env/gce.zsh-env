@@ -1,4 +1,0 @@
-export GCE_EMAIL='owner-575@m09-deep-learning.iam.gserviceaccount.com'
-export GCE_PROJECT='m09-deep-learning'
-export GCE_CREDENTIALS_FILE_PATH="$HOME/.gce-credentials.json"
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"

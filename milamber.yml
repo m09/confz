@@ -1,0 +1,15 @@
+---
+- name: Milamber setup.
+  hosts: milamber
+  roles:
+    - update
+    - git
+    - curl
+    - zsh
+    - python
+    - ssh
+    - github-key
+    - emacs
+    - tmux
+    - latex
+

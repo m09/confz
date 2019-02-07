@@ -1,2 +1,0 @@
-alias gce-start='gcloud compute instances start main workstation-1 workstation-2 workstation-3 workstation-4 workstation-5 workstation-6 workstation-7 workstation-8'
-alias gce-stop='gcloud compute instances stop main workstation-1 workstation-2 workstation-3 workstation-4 workstation-5 workstation-6 workstation-7 workstation-8'
