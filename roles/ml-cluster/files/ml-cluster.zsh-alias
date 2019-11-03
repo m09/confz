@@ -1,0 +1,3 @@
+alias mlcluster-connect='sshuttle -D --no-latency-control --dns -r proxy@provisioner.infra.ml.prod.srcd.run 10.20.10.0/24'
+alias mlcluster-disconnect='pkill sshuttle'
+

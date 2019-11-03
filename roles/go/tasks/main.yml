@@ -1,0 +1,6 @@
+---
+
+- name: Add zsh configuration
+  copy:
+    src: "go.zsh-env"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/go.zsh-env"

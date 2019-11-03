@@ -1,0 +1,6 @@
+---
+
+- name: Add zsh configuration
+  copy:
+    src: "nltk.zsh-env"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/nltk.zsh-env"

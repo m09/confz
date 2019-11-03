@@ -20,6 +20,7 @@
     name: "{{ item }}"
     state: latest
     user_install: no
+    install_dir: "{{ ansible_user_dir }}/opt/gems"
   with_items:
     - bundler
     - jekyll

@@ -1,0 +1,2 @@
+export KUBECONFIG=$KUBECONFIG:~/.kube/ml-prod-cluster.yaml:~/.kube/ml-prod-reader-user.yaml
+
