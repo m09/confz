@@ -3,6 +3,7 @@
   hosts: pug
   roles:
     - update
+    - jekyll
     - git
     - curl
     - zsh
@@ -12,4 +13,6 @@
     - emacs
     - tmux
     - latex
+    - go
+    - nltk-data
 
