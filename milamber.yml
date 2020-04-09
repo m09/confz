@@ -15,3 +15,5 @@
     - latex
     - go
     - nltk-data
+    - poetry
+

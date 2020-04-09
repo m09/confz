@@ -1,0 +1,22 @@
+---
+- name: Check if Poetry is installed
+  stat: 
+    path: "{{ ansible_user_dir }}/.poetry/bin/poetry"
+  register: poetry_installed
+
+- name: Install Poetry
+  when: not poetry_installed.stat.exists
+  block:
+    - name: Download and install poetry
+      shell:
+        cmd: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+        warn: no
+
+- name: Copy environment file
+  copy:
+    src: poetry.zsh-env
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/poetry.zsh-env"
+
+- name: Export completion file
+  shell: poetry completions zsh > {{ ansible_user_dir }}/.zsh-custom/comps/_poetry
+
