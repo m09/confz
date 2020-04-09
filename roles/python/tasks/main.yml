@@ -6,7 +6,7 @@
     state: latest
   become: yes
   become_method: sudo
-    
+
 - name: Copy configuration
   copy:
     src: pythonrc

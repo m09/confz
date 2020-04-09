@@ -1,2 +1,2 @@
 export PYTHONSTARTUP="$HOME/.pythonrc"
-export PATH="$HOME/.poetry/bin:$PATH"
+
