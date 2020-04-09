@@ -12,16 +12,6 @@
     src: pythonrc
     dest: "{{ ansible_user_dir }}/.pythonrc"
 
-- name: Copy PyPi configuration
-  copy:
-    src: pypirc
-    dest: "{{ ansible_user_dir }}/.pypirc"
-
-- name: Ensure PyPi configuration has proper permissions
-  file:
-    path:  "{{ ansible_user_dir }}/.pypirc"
-    mode: 0400
-
 - name: Check if Miniconda is installed
   stat:
     path: '{{ miniconda_source_script_path }}'
