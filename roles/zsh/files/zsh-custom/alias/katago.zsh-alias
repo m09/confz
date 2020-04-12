@@ -1,0 +1,2 @@
+alias katago-start='gcloud compute instances start katago'
+alias katago-stop='gcloud compute instances stop katago'

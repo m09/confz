@@ -1,4 +1,0 @@
-export VIRTUALENVWRAPPER_PYTHON="{{ miniconda_home_dir }}/bin/python"
-export VIRTUALENV_PYTHON="{{ miniconda_home_dir }}/bin/python"
-export WORKON_HOME=$HOME/.virtualenvs
-source "{{ miniconda_home_dir }}/bin/virtualenvwrapper.sh"

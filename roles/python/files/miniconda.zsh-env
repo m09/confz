@@ -1,2 +1,0 @@
-export PATH="{{ miniconda_home_dir }}/bin:$PATH"
-source "{{ miniconda_home_dir }}/etc/profile.d/conda.sh"
