@@ -1,2 +1,0 @@
-export CREDS_GPG_ARGS="--trust-model always"
-

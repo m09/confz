@@ -1,0 +1,9 @@
+all:
+  children:
+    local:
+      hosts:
+        milamber:
+      vars:
+        ansible_connection: local
+  vars:
+    confz_files: "{{ ansible_user_dir }}/confz-files"

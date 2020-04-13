@@ -2,18 +2,15 @@
 - name: Milamber setup.
   hosts: milamber
   roles:
-    - update
-    - jekyll
-    - git
-    - curl
-    - zsh
-    - python
-    - ssh
+    - base
+    - confz
     - github-key
-    - emacs
-    - tmux
-    - latex
     - go
+    - emacs
+    - jekyll
+    - latex
     - nltk-data
     - poetry
-
+    - python
+    - ssh
+    - zsh

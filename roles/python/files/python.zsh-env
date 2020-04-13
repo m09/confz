@@ -1,7 +1,0 @@
-export PATH="{{ miniconda_home_dir }}/bin:$PATH"
-source "{{ miniconda_home_dir }}/etc/profile.d/conda.sh"
-export PYTHONSTARTUP="$HOME/.pythonrc"
-export VIRTUALENVWRAPPER_PYTHON="{{ miniconda_home_dir }}/bin/python"
-export VIRTUALENV_PYTHON="{{ miniconda_home_dir }}/bin/python"
-export WORKON_HOME=$HOME/.virtualenvs
-source "{{ miniconda_home_dir }}/bin/virtualenvwrapper.sh"

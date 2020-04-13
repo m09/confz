@@ -1,13 +1,18 @@
 ---
-- name: Install latex
+- name: install
   apt:
-    name: ["texlive", "texlive-lang-english", "texlive-lang-french", "texlive-xetex"]
+    name:
+      - texlive
+      - texlive-lang-english
+      - texlive-lang-french
+      - texlive-xetex
     state: latest
   become: yes
   become_method: sudo
 
-- name: Copy configuration
-  synchronize:
-    src: "latexmkrc"
+- name: link configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/latexmkrc"
     dest: "{{ ansible_user_dir }}/.latexmkrc"
-
+    state: link
+    force: yes

@@ -1,3 +1,0 @@
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib/cuda/lib64
-export PATH=/usr/lib/cuda/bin:$PATH
-export CPATH=/usr/lib/cuda/include:$CPATH

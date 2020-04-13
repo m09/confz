@@ -1,0 +1,21 @@
+---
+- name: upgrade packages
+  apt:
+    update_cache: yes
+    autoremove: yes
+    autoclean: yes
+    upgrade: dist
+  become: yes
+  become_method: sudo
+
+- name: install basic packages
+  apt:
+    name:
+      - build-essential
+      - curl
+      - htop
+      - make
+    state: latest
+    autoclean: yes
+  become: yes
+  become_method: sudo

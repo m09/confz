@@ -1,15 +1,17 @@
 ---
-- name: Copy configuration
-  copy:
-    src: "{{ item.src_filename }}"
+- name: link keys
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/{{ item.src_filename }}"
     dest: "{{ ansible_user_dir }}/.ssh/{{ item.dest_filename }}"
+    state: link
+    force: yes
   with_items:
-    - src_filename: "github.pub.gpg"
+    - src_filename: "github.pub.confz"
       dest_filename: "github.pub"
-    - src_filename: "github.gpg"
+    - src_filename: "github.confz"
       dest_filename: "github"
 
 - name: Ensure the github private key has proper permissions
   file:
-    path:  "{{ ansible_user_dir }}/.ssh/github"
+    path: "{{ ansible_user_dir }}/.ssh/github"
     mode: 0400

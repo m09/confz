@@ -1,5 +1,7 @@
 ---
-- name: Copy config
-  copy:
-    src: config.gpg
+- name: link configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/config.confz"
     dest: "{{ ansible_user_dir }}/.ssh/config"
+    state: link
+    force: yes

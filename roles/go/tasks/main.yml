@@ -1,6 +1,7 @@
 ---
-
-- name: Add zsh configuration
-  copy:
-    src: "go.zsh-env"
+- name: link environment configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/go.zsh-env"
     dest: "{{ ansible_user_dir }}/.zsh-custom/env/go.zsh-env"
+    state: link
+    force: yes

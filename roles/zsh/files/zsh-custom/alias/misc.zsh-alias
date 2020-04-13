@@ -1,4 +1,0 @@
-alias ansible-playbook='ansible-playbook -K -i hosts.gpg site.yml'
-alias u='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove --purge && sudo apt-get clean'
-alias j=jump
-alias n='nordvpn'

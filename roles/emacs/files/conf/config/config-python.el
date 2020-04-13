@@ -1,6 +1,0 @@
-(require 'elpy)
-(package-initialize)
-(setq elpy-rpc-backend "jedi")
-(delete 'elpy-module-yasnippet elpy-modules)
-(elpy-enable)
-(provide 'config-python)

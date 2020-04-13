@@ -1,0 +1,4 @@
+---
+poetry_installer_url: "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py"
+poetry_installer_dest: "/tmp/get-poetry.py"
+poetry_download_timeout_sec: 1800

@@ -1,21 +1,21 @@
 ---
-- name: Install emacs
+- name: install
   apt:
     name: emacs
     state: latest
   become: yes
   become_method: sudo
 
-- name: Copy emacs folder
-  synchronize:
-    src: conf/
-    dest: "{{ ansible_user_dir }}/.emacs.d/"
-    delete: yes
-    recursive: true
+- name: link configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/emacs.d"
+    dest: "{{ ansible_user_dir }}/.emacs.d"
+    state: link
+    force: yes
 
-- name: Add zsh configuration
-  synchronize:
-    src: "zsh-custom/"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/"
-    recursive: true
-
+- name: link environment configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/emacs.zsh-env"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/emacs.zsh-env"
+    state: link
+    force: yes

@@ -1,6 +1,7 @@
 ---
-
-- name: Add zsh configuration
-  copy:
-    src: "nltk.zsh-env"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/env/nltk.zsh-env"
+- name: link environment configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/nltk-data.zsh-env"
+    dest: "{{ ansible_user_dir }}/.zsh-custom/env/nltk-data.zsh-env"
+    state: link
+    force: yes

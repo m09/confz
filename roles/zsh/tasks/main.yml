@@ -1,27 +1,28 @@
 ---
-- name: Install zsh
+- name: install
   apt:
     name: zsh
     state: latest
   become: yes
   become_method: sudo
 
-- name: Install oh-my-zsh
+- name: clone oh-my-zsh
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh.git
     dest: ~/.oh-my-zsh
 
-- name: Copy configuration
-  synchronize:
-    src: "{{ item }}"
+- name: link configuration
+  file:
+    src: "{{ confz_files }}/{{ role_name }}/{{ item }}"
     dest: "{{ ansible_user_dir }}/.{{ item }}"
-    recursive: true
+    state: link
+    force: yes
   with_items:
-    - zsh-custom/
+    - zsh-custom
     - zshrc
     - zshenv
 
-- name: Change default shell to zsh
+- name: change default shell
   user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
