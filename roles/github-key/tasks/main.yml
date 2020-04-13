@@ -1,6 +1,6 @@
 ---
 - name: Copy configuration
-  file:
+  copy:
     src: "{{ item.src_filename }}"
     dest: "{{ ansible_user_dir }}/.ssh/{{ item.dest_filename }}"
   with_items:
