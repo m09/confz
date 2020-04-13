@@ -8,7 +8,7 @@
 
 - name: clone confz-files
   git:
-    repo: https://github.com/m09/confz-files.git
+    repo: git@github.com:m09/confz-files.git
     dest: "{{ confz_files }}"
     force: yes
 
