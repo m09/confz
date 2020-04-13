@@ -4,6 +4,7 @@
   roles:
     - base
     - confz
+    - git
     - github-key
     - go
     - emacs

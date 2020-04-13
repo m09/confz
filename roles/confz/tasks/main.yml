@@ -6,15 +6,14 @@
   become: yes
   become_method: sudo
 
+- name: download git configuration
+  get_url:
+    url: "https://raw.githubusercontent.com/m09/confz-files/master/git/gitconfig"
+    dest: "{{ ansible_user_dir }}/.gitconfig"
+    force: yes
+
 - name: clone confz-files
   git:
     repo: git@github.com:m09/confz-files.git
     dest: "{{ confz_files }}"
-    force: yes
-
-- name: link git configuration
-  file:
-    src: "{{ confz_files }}/{{ role_name }}/gitconfig"
-    dest: "{{ ansible_user_dir }}/.gitconfig"
-    state: link
     force: yes
