@@ -1,5 +1,5 @@
 ---
 - name: Copy config
   copy:
-    src: config
+    src: config.gpg
     dest: "{{ ansible_user_dir }}/.ssh/config"

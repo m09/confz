@@ -1,12 +1,13 @@
 ---
 - name: Copy configuration
-  copy:
-    src: "{{ item }}"
-    dest: "{{ ansible_user_dir }}/.ssh/"
-    force: yes
+  file:
+    src: "{{ item.src_filename }}"
+    dest: "{{ ansible_user_dir }}/.ssh/{{ item.dest_filename }}"
   with_items:
-    - "github.pub"
-    - "github"
+    - src_filename: "github.pub.gpg"
+      dest_filename: "github.pub"
+    - src_filename: "github.gpg"
+      dest_filename: "github"
 
 - name: Ensure the github private key has proper permissions
   file:
