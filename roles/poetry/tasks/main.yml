@@ -21,7 +21,7 @@
 
     - name: remove installer
       file:
-        path: "{{ miniconda_installer_dest }}"
+        path: "{{ poetry_installer_dest }}"
         state: "absent"
 
 - name: link environment configuration
