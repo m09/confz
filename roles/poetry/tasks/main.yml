@@ -17,7 +17,7 @@
 
     - name: run installer
       shell:
-        cmd: "python {{ poetry_installer_dest }}"
+        cmd: "python3 {{ poetry_installer_dest }}"
 
     - name: remove installer
       file:
@@ -32,4 +32,4 @@
     force: yes
 
 - name: export completion file
-  shell: poetry completions zsh > {{ ansible_user_dir }}/.zsh-custom/comps/_poetry
+  shell: "{{ ansible_user_dir }}/.poetry/bin/poetry completions zsh > {{ ansible_user_dir }}/.zsh-custom/comps/_poetry"
