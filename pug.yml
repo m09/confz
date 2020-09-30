@@ -1,6 +1,6 @@
 ---
-- name: Milamber setup.
-  hosts: milamber
+- name: Pug setup.
+  hosts: pug
   roles:
     - base
     - confz
