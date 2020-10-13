@@ -12,7 +12,10 @@
 
 - name: link configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/latexmkrc"
-    dest: "{{ ansible_user_dir }}/.latexmkrc"
+    src: "{{ confz_files }}/{{ role_name }}/{{ item }}"
+    dest: "{{ ansible_user_dir }}/.{{ item }}"
     state: link
     force: yes
+  with_items:
+    - latexmkrc
+    - indentconfig.yml
