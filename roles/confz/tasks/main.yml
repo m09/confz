@@ -8,7 +8,7 @@
 
 - name: download git configuration
   get_url:
-    url: "https://raw.githubusercontent.com/m09/confz-files/master/git/gitconfig"
+    url: "https://raw.githubusercontent.com/m09/confz-files/main/git/gitconfig"
     dest: "{{ ansible_user_dir }}/.gitconfig"
     force: yes
 
