@@ -2,9 +2,11 @@
 - name: install
   apt:
     name:
+      - latexmk
       - texlive
       - texlive-lang-english
       - texlive-lang-french
+      - texlive-science
       - texlive-xetex
     state: latest
   become: yes
