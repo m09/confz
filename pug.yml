@@ -13,5 +13,6 @@
     - nltk-data
     - poetry
     - python
+    - rust
     - ssh
     - zsh
