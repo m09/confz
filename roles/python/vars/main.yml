@@ -1,1 +1,0 @@
-miniconda_source_script_path: '{{ miniconda_home_dir }}/etc/profile.d/conda.sh'

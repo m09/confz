@@ -1,45 +1,8 @@
 ---
-- name: install dependencies
-  apt:
-    name: bzip2
-    state: latest
-  become: yes
-  become_method: sudo
-
 - name: link configuration
   copy:
     src: "{{ confz_files }}/{{ role_name }}/pythonrc"
     dest: "{{ ansible_user_dir }}/.pythonrc"
-
-- name: check installation
-  stat:
-    path: "{{ miniconda_source_script_path }}"
-  register: miniconda_source_script
-
-- name: install
-  when: not miniconda_source_script.stat.exists
-  block:
-    - name: download installer
-      get_url:
-        url: "{{ miniconda_installer_url}}"
-        dest: "{{ miniconda_installer_dest }}"
-        timeout: "{{ miniconda_download_timeout_sec }}"
-        mode: "0755"
-
-    - name: run installer
-      command: "{{ miniconda_installer_dest }} -b -p {{ miniconda_home_dir }}"
-      args:
-        creates: "{{ miniconda_home_dir }}"
-
-    - name: remove installer
-      file:
-        path: "{{ miniconda_installer_dest }}"
-        state: "absent"
-
-- name: install virtualenvwrapper
-  pip:
-    name: virtualenvwrapper
-    executable: "{{ miniconda_home_dir }}/bin/pip"
 
 - name: link environment configuration
   file:

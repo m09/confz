@@ -1,7 +1,7 @@
 ---
 - name: check installation
   stat:
-    path: "{{ ansible_user_dir }}/.poetry/bin/poetry"
+    path: "{{ ansible_user_dir }}/.local/bin/poetry"
   register: poetry_installed
 
 - name: install
@@ -32,4 +32,4 @@
     force: yes
 
 - name: export completion file
-  shell: "{{ ansible_user_dir }}/.poetry/bin/poetry completions zsh > {{ ansible_user_dir }}/.zsh-custom/comps/_poetry"
+  shell: "{{ ansible_user_dir }}/.local/bin/poetry completions zsh > {{ ansible_user_dir }}/.zsh-custom/comps/_poetry"
