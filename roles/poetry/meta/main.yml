@@ -1,5 +1,0 @@
----
-dependencies:
-  - { role: confz }
-  - { role: zsh }
-  - { role: python }

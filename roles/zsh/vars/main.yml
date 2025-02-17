@@ -1,0 +1,2 @@
+---
+env_dir: "{{ ansible_user_dir }}/.zsh-custom/env"

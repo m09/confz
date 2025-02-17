@@ -6,6 +6,7 @@
       - texlive
       - texlive-lang-english
       - texlive-lang-french
+      - texlive-latex-extra
       - texlive-science
       - texlive-xetex
     state: latest
@@ -14,8 +15,8 @@
 
 - name: link configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/{{ item }}"
-    dest: "{{ ansible_user_dir }}/.{{ item }}"
+    src: "{{ role_path }}/files/{{ item }}"
+    path: "{{ ansible_user_dir }}/.{{ item }}"
     state: link
     force: yes
   with_items:

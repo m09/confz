@@ -8,14 +8,14 @@
 
 - name: link configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/emacs.d"
-    dest: "{{ ansible_user_dir }}/.emacs.d"
+    src: "{{ role_path }}/files/emacs.d"
+    path: "{{ ansible_user_dir }}/.emacs.d"
     state: link
     force: yes
 
 - name: link environment configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/emacs.zsh-env"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/env/emacs.zsh-env"
+    src: "{{ role_path }}/files/emacs.zsh-env"
+    path: "{{ env_dir }}/emacs.zsh-env"
     state: link
     force: yes

@@ -15,6 +15,8 @@
       - curl
       - htop
       - make
+      - git
+      - rsync
     state: latest
     autoclean: yes
   become: yes

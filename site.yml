@@ -1,2 +1,9 @@
 ---
-- import_playbook: pug.yml
+- name: All roles.
+  hosts: all
+  roles:
+    - base
+    - emacs
+    - git
+    - latex
+    - zsh

@@ -8,14 +8,14 @@
 
 - name: link git configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/gitconfig"
-    dest: "{{ ansible_user_dir }}/.gitconfig"
+    src: "{{ role_path }}/files/gitconfig"
+    path: "{{ ansible_user_dir }}/.gitconfig"
     state: link
     force: yes
 
 - name: link environment configuration
   file:
-    src: "{{ confz_files }}/{{ role_name }}/git.zsh-env"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/env/git.zsh-env"
+    src: "{{ role_path }}/files/git.zsh-env"
+    path: "{{ env_dir }}/git.zsh-env"
     state: link
     force: yes

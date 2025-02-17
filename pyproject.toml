@@ -1,15 +1,20 @@
-[tool.poetry]
-name = "confz"
-version = "0.1.0"
+[project]
+authors = [
+  {name = "m09", email = "142691+m09@users.noreply.github.com"},
+]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+  "ansible >= 11, < 12",
+]
 description = ""
-authors = ["m09 <142691+m09@users.noreply.github.com>"]
+homepage = "https://github.com/m09/confz"
+name = "confz"
+readme = "README.md"
+requires-python = ">= 3.12"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
-python = "^3.9"
 ansible = "^5.9.0"
-
-[tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+python = "^3.9"

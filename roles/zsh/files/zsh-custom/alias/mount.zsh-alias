@@ -1,0 +1,2 @@
+alias nas-mount='sudo mount 192.168.1.26:/volume1/share /mnt/nas'
+alias nas-umount='sudo umount /mnt/nas'

@@ -1,7 +1,0 @@
----
-- name: link environment configuration
-  file:
-    src: "{{ confz_files }}/{{ role_name }}/rust.zsh-env"
-    dest: "{{ ansible_user_dir }}/.zsh-custom/env/rust.zsh-env"
-    state: link
-    force: yes

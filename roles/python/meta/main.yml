@@ -1,4 +1,0 @@
----
-dependencies:
-  - { role: confz }
-  - { role: zsh }
